@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmarTerra IoT Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- jsPDF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <header>
+    <img src="smarterra-logo.png" alt="SmarTerra" class="logo">
+    <h1>SmarTerra Dashboard</h1>
+  </header>
+
+  <main>
+    <section id="map-section">
+      <h2>Mapa de Estaciones</h2>
+      <div id="map"></div>
+    </section>
+
+    <section id="metrics">
+      <h2>Datos en Tiempo Real</h2>
+      <canvas id="climateChart"></canvas>
+      <canvas id="soilChart"></canvas>
+      <canvas id="npkChart"></canvas>
+    </section>
+
+    <section id="controls">
+      <h2>Actuadores</h2>
+      <button onclick="toggleActuator('pump')">Bomba</button>
+      <button onclick="toggleActuator('valveA')">Válvula A</button>
+      <button onclick="toggleActuator('valveB')">Válvula B</button>
+    </section>
+
+    <section id="reports">
+      <h2>Reportes</h2>
+      <button onclick="downloadPDF()">Generar PDF</button>
+      <button onclick="downloadCSV()">Exportar CSV</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 SmarTerra IoT</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
